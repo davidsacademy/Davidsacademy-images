@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Inter:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;margin:0;padding:0;background:transparent;}
+header{
+  width:100%;
+  background:#000;
+  border-bottom:3px solid #C8102E;
+  display:flex;align-items:center;
+  padding:8px 14px;gap:12px;
+  overflow:hidden;
+}
+.logo{
+  width:clamp(55px,11vw,105px);
+  height:clamp(55px,11vw,105px);
+  object-fit:contain;border-radius:50%;flex-shrink:0;
+}
+.bt{
+  display:flex;flex-direction:column;gap:2px;
+  min-width:0;flex:1;
+  align-items:flex-start; /* text left aligned */
+}
+.b1{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(0.9rem,3.5vw,1.7rem);
+  font-weight:800;letter-spacing:1.5px;
+  text-transform:uppercase;color:#fff;line-height:1.1;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  text-align:left;
+}
+.b2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(0.5rem,1.5vw,0.82rem);
+  font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:#F5C518;line-height:1.1;
+  white-space:nowrap;text-align:left;
+}
+.bcontact{
+  display:flex;align-items:center;
+  gap:clamp(10px,3vw,40px);
+  margin-top:2px;flex-wrap:nowrap;
+}
+.bphone,.bemail{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(0.55rem,1.4vw,0.85rem);
+  font-weight:700;color:#fff;
+  white-space:nowrap;
+}
+.bphone::before{content:'📞 ';}
+.bemail::before{content:'✉ ';}
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABuAG4DASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAYHBQgCAwQBCf/EADcQAAIBBAIBAgQEBAMJAAAAAAECAwAEBREGEiEHMRMiQVEUMmFxFSNCkQgzcxYXUmKBoqOx8P/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EAC0RAAEDAgMGBgIDAAAAAAAAAAEAAhEDIRIxQQRRYZGh8BMicYHR4QWxQsHx/9oADAMBAAIRAxEAPwDVSlKURKUpREpSlESlKURKUpREpSlESlKURKUpREpSslgcRcZm/W2tui6UvJLIeqRIPLOx+ige5qCYuVZrS4wF4ra3mupkht43llc9VRFLMx+wA96mGM4DeTXAgv7iO3uPO7WJDcXA0CT2RPCHQJ07L7VYOC43a4THW85klsMZcITJfdQLm4jZWCyL58IJOimBdOwYdj50tp8G4Dy/J4/SQ2HGMRLMLlFntBJOT7/LB4Ea/MyjuS3TqGGxuoueC1mnTtGI9Pn36KhsXwHH3uKtsjCMrNZXH+XO7W8Ck/FWH8pZ2HzuB5/ej+nNrcpGbCTJkyN0jKRw3IZvn8aRw3tE58KfA39RW1OO9DsPa2K2s2f5HNH3aQol0kMYdnDkhUQa+YAj7fTVdU3ojb2dv145ybMWEoVlT8SIrtF7L1Ouyhx4OvDCmFR451Aj0H+9VpdecTvFtpLrGS2+UtIx2eSzYs0Y+7xkB1H6ldfrUdII962o5Nw2/wCFYSzs83h0ls7KJYLPNY+ZgsBLbdmJ01u7sF252g2xJPsa15jxCHISn8PLbyZCQdre7gURx3q76qZEHiMudhJNBZNew2GaLtzUgMq2bY9Pr3n1CqCldk8TwTPFKjJIhKsrDRBHuCK66usSIsUpSlFCUpSiL6Bs1O5nbjGIgsreQw3xEV7eyL+YP4eGHz9F+VyPYsw3+Wo/wqxiyHJ7CG5G7YSfFm/00Bd/+1TU19FcN/vA9aLH+KKJLd7iTI3SHyGVNv119i3VdfY1m4FxhdVF4osxkTMjp9jkRqrsw2LuuLcDteZ8it7WPk986LibFt/BtJZj2aYq5I+KwLMSfyjQGvNSOX1JynHM/fRZHO47PWNrZCRja26x9rlzqOFWUnZ8bJ+ig+NirY5Fx60zsaJkI7eZIyWRZ7SKYKT7kd1OqhU2FweJu4I7fk+FxdxCzSQotlYo8ba+ZlHXYOh5P2H2rOo15dLSu7Y6+y06WCq0EmZkemsEiOG+VFMZ6w5SA2c+XexuLU31xbSmygbcvSFGRY9ney7a2R9RXZfepvI7XM3GPmlsYr+3jggmiaECCO7uXDJGXLb/AJcQYsfbfv8ASoryf1AsreS3mwkn4tkuHuRlru0sLJLmU6HxYvijs3gAdwvkj3PjWU41ncFyuS3tMxcw4q+uXedpbvFWNxb38uvLLMoZDIFGiPBIA8fejRUAIJPT5XRWqbI9zHhrQJvZ184/jEHXfbJSC453yZ7HKfDlwGUt4rw2ETJF1F5/L3J0VpNOE35APn29juqs5baXeA9P2z/wIsjxTLyt0tI4WgjgffSMTAkv8HSkqFbSsqgEqQBfeL41hs1j7e2jzGIzFhb7MMMdjZyRR79+oVSBv9Kkmf4xa5vh1/x296tZ3VsbYARKgj8fKVCgAdToj9hWlNjwZJXJtm0bO+nhptEzmBFuQzz0/Ufn/wAohOXw6Zk/NkLd1tr9tf5uwfhTn9WClW/5l3/VUNqX8ShmTkeQwN4fmvYZrBwTvUq7Mf8AaRF/uaiTjTGtGSPKVx7QW1IqNETI5fRC40pSrrmSlKURSXguheZNv6lxd4V/f4LD/wBE1kOL3cOJubvM4OS7jusfaoyss7xEO0ixkkoVbrpj9RvY39jjfT90/wBp7a3mYLHeLJZMT7D4qNGD/dhUi9FsRaXHqdhLHPzXdpaXcslqxtpzC4kKsFUsPIBcAarKPPmu0OJoQGgjU6iDpuzEr7keX5bJbe9kjuN/WcSXA/8AK7isjgMlrj99LcQ2bQNJI0iRWsMXeKCISGMsig6eSWFW0fygj61fPKP8O0VwXlwmTtZmPkRZS0Abf+vB0f8AuGqqOQ8MvuHBsVn8VcWUdyZmW5iufxcEsTxdJfhnqH7p1jk6N5KxtqpDXDMyquq0XQGswmd82VdS3AvYrO8y1ut/k8jMfmdipC70PbwAPAAA0B4+lSqPimW49BjsxJbtb8Szt2liupfm7nfWdV91KspZW/T7N5x/HZMfjuRQQc4S3tMZY25mR4EaR71APlSBxsak/wCPYABPkGrIued4zmvCZC9jk4LuHLW19DBL1a3lkjTqttb6ACKBoa86UMxNc9Km4Evdx14/0vY/IbbQcxmz0QDGGThANmwbxJxGSZ4Qq05LmLgZWGeSDHCa4to5nX8BANSgmOTRCg67xsfB+tc7b1Cz2LgYW9zPFFrRSC8uoNj7DrNof9BVg8S9JcvzeG1v7WyjhxyQJAt/kbt1jutEl5IoYgrsrOzMCzgEGrQs/Q7j3GsLe5DNZa5C20DzSy4+KOyEaqpJIYBpNjX1c10lrpmbLxW1KIp4SyXb5WreOtbHG+oFpawtcNeQ5qNELtvafFA8nXv9/wD4VDskoTIXCr+USMB+2zUi4VbsnKLbJXG2htVkyDszbOo1Ljt+pbqP3aotKxeRmb3J2aq0DESCtK7j4TQ5oByyjIZniZC4UpStVxJSlKIucTtHIroSrKdgj3Bq2sPYYvPXEmcuJ7uCa5ja4iNvKI0gvo17SltKWP0mVV8tsqPYkVFWf4pnjh7l47hZJbCcr8aON+jgqdrJG39MiHyrfuD4JFUcLyt6T7GmTAPfLfz0W/PpTzhOV4prTIERcgsVUXkLIY/iqfyXCKwB+HINMPHjej9N5P1K40vK+F5PFqALtojLZyg6aG4T5onB9wQwHkfQkfWtZMTnLe7axyD5hMbdo001vyGMle8nQFu/uBI5A7wvtQqnp27L1tbivrTKlxc47lGLnuJLP4ay5HEwtLGC42okh/PG+vzKvfqfB1VgZuFk5paYcqs4Hw/L8+ly8mJuLCwjheKc2pdol/nJ338PpJGNMGTaqpJQ7rtx/Dr2T1OPD8nJb3faWC3ubiOSSRxB0/ETRh210HVUQhAoPxhvftXOy9QcfxPn+ayXD8jib6wuy/WK6mNujxSP8ZSO2tMkjzrr7MPHnYy3pPzjj1jyrP8AIuQZNLnLT91SCwhkuWeSVw8vRUB+UKlvGCTr5D5PuYBEwrua4MDibbpH6zHJbPwxpDEkcSLHGgCqijQUD2AH0FUt6z8iXk00/CsRJ3tUBfMzxzLH1VR2FsjN4Mh0GYb8KpHjZ1hOW+rWVzeStcPYRy8Xx19FJIl5cOgu5whHaNfPW3bqSdkswGvAJFVHynNYrGYpYoE1hSTJbQFWjnyG/fv538IkKWdvmZl+QgMdSTCqxheYChnJlsuP4m5t8bdTXRynUQyTR9HWzUgjY+neQbG9bWNTodqgVe3L5K5y2QmvLx+80p2SBoD6AADwABoAD2AArxVDRCvWqYzY2HffJKUpVlilKUoiUpSiLKYTO32GkkNnKPhyjrLDIokilX7Oh8MP3qaYfmtnFj7uztnusF+K7mX8NGt1CWderMFciRCR9nI/TwKrelVLdQtW1SBhcJHHuequ6LmNuMDa460ymDC2tsLeGWVrmNvELxhmUxH6v2ADaBH6167/ANRbZY2X+I4iOP4ksgW3hnuXPdw4B2sSsEI0uz4BNUPs/emzSDvU+JTzwdTHz1U+zPPFkAW1jnvZkKlbnJlZAjKixqyQgdA3VFHZu7eN735qE5C+uchdyXN7PLPcSHs8kjFmY/qTXmpQNi6q6qXDDkNw7v7pSlKss0pSlESlKURKUpREpSlESlKURKUpREpSlESlKURf/9k=" alt="DA Logo"/>
+  <div class="bt">
+    <div class="b1">David's Academy</div>
+    <div class="b2">of Defensive Driving</div>
+    <div class="bcontact">
+      <span class="bphone">647 657 7913</span>
+      <span class="bemail">info@davidsacademy.ca</span>
+    </div>
+  </div>
+</header>
+</body>
+</html>
