@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>David's Academy — Smith System</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Inter:wght@600;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#111;font-family:'Oswald',sans-serif;}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:68px;background:#000;border-bottom:3px solid #C8102E;
+  display:flex;align-items:center;padding:0 16px;gap:14px;
+}
+.logo{width:54px;height:54px;object-fit:contain;flex-shrink:0;border-radius:50%;}
+.bt{display:flex;flex-direction:column;gap:2px;}
+.b1{font-size:clamp(0.95rem,3.5vw,1.35rem);font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;line-height:1.1;}
+.b2{font-size:clamp(0.55rem,1.6vw,0.7rem);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#F5C518;line-height:1.1;}
+.bcontact{display:flex;align-items:center;gap:8px;margin-top:2px;flex-wrap:wrap;}
+.bphone{font-family:'Inter',sans-serif;font-size:clamp(0.65rem,1.8vw,0.82rem);font-weight:800;color:#FFD700;letter-spacing:0.8px;white-space:nowrap;}
+.bemail{font-family:'Inter',sans-serif;font-size:clamp(0.65rem,1.8vw,0.82rem);font-weight:800;color:#FFD700;letter-spacing:0.8px;white-space:nowrap;}
+.bsep{color:rgba(255,255,255,0.5);font-size:0.7rem;}
+.bphone::before{content:'📞 ';}
+.bemail::before{content:'✉ ';}
+.vp{position:fixed;top:68px;left:0;right:0;bottom:0;overflow:hidden;background:#111;}
+.track{display:flex;height:100%;will-change:transform;}
+.slide{flex-shrink:0;width:100vw;height:100%;background:#111;display:flex;align-items:center;justify-content:center;}
+.si{display:block;width:100%;height:auto;max-height:100%;object-fit:contain;}
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="data:image/jpeg;base64,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" alt="DA Logo"/>
+  <div class="bt">
+    <div class="b1">David's Academy</div>
+    <div class="b2">of Defensive Driving</div>
+    <div class="bcontact">
+      <span class="bphone">647 657 7913</span>
+      <span class="bsep">|</span>
+      <span class="bemail">info@davidsacademy.ca</span>
+    </div>
+  </div>
+</header>
+<div class="vp" id="vp">
+  <div class="track" id="track">
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_000000002b0c71fdace2022dcf1ffc03.png" alt="clone-last" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_00000000200c722f991655b77cb49ed7.png" alt="Smith's System Overview" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_0000000045e871f58328406455b66d3a.png" alt="Aim High in Steering" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_000000004c44722f9535bf14d3d250c1.png" alt="Get the Big Picture" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_0000000014d871fd8e5fa9f002929f92.png" alt="Keep Your Eyes Moving" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_00000000600471f5b4edcef5f12b02be.png" alt="Leave Yourself an Out" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_000000002b0c71fdace2022dcf1ffc03.png" alt="Make Sure They See You" crossorigin="anonymous"/></div>
+    <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_00000000200c722f991655b77cb49ed7.png" alt="clone-first" crossorigin="anonymous"/></div>
+
+  </div>
+</div>
+<script>
+const REAL=6,TOTAL=REAL+2,AUTO=4000,SPEED=400;
+const track=document.getElementById('track');
+track.style.width=(TOTAL*100)+'vw';
+let cur=1,autoT,sliding=false;
+function setPos(i,a){track.style.transition=a?`transform ${SPEED}ms cubic-bezier(0.55,0,0.1,1)`:'none';track.style.transform=`translateX(-${i*100}vw)`;cur=i;}
+function goTo(i){if(sliding)return;sliding=true;setPos(i,true);}
+track.addEventListener('transitionend',()=>{sliding=false;if(cur===0)setPos(REAL,false);else if(cur===REAL+1)setPos(1,false);});
+function next(){goTo(cur+1);}function prev(){goTo(cur-1);}
+function startAuto(){clearInterval(autoT);autoT=setInterval(next,AUTO);}
+document.getElementById('vp').addEventListener('click',e=>{if(e.clientX>window.innerWidth/2)next();else prev();clearInterval(autoT);startAuto();});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){next();clearInterval(autoT);startAuto();}if(e.key==='ArrowLeft'){prev();clearInterval(autoT);startAuto();}});
+let tx=0;
+track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+track.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>45){if(d>0)next();else prev();clearInterval(autoT);startAuto();}});
+setPos(1,false);startAuto();
+</script>
+</body>
+</html>
