@@ -7,7 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;800&family=Inter:wght@600;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;margin:0;padding:0;background:#fff;font-family:'Oswald',sans-serif;overflow:hidden;}
+html,body{
+  width:100%;margin:0;padding:0;
+  background:#fff;
+  font-family:'Oswald',sans-serif;
+  /* let body grow naturally with content */
+  overflow-x:hidden;
+  overflow-y:auto;
+}
 
 header{
   width:100%;
@@ -15,53 +22,33 @@ header{
   border-bottom:3px solid #C8102E;
   display:flex;align-items:center;
   padding:6px 12px;gap:10px;
-  flex-shrink:0;
 }
-.logo{
-  width:52px;height:52px;
-  object-fit:contain;border-radius:50%;flex-shrink:0;
-}
+.logo{width:52px;height:52px;object-fit:contain;border-radius:50%;flex-shrink:0;}
 .bt{display:flex;flex-direction:column;gap:0px;min-width:0;}
-.b1{
-  font-size:clamp(0.85rem,3vw,1.3rem);
-  font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-  color:#fff;line-height:1.15;
-  white-space:nowrap;
-}
-.b2{
-  font-size:clamp(0.48rem,1.3vw,0.65rem);
-  font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:#F5C518;line-height:1.15;
-  white-space:nowrap;
-}
-.bcontact{
-  display:flex;align-items:center;gap:6px;
-  flex-wrap:nowrap;
-}
-.bphone,.bemail{
-  font-family:'Inter',sans-serif;
-  font-size:clamp(0.58rem,1.5vw,0.72rem);
-  font-weight:800;color:#FFD700;
-  white-space:nowrap;
-}
+.b1{font-size:clamp(0.85rem,3vw,1.3rem);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#fff;line-height:1.15;white-space:nowrap;}
+.b2{font-size:clamp(0.48rem,1.3vw,0.65rem);font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#F5C518;line-height:1.15;white-space:nowrap;}
+.bcontact{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;}
+.bphone,.bemail{font-family:'Inter',sans-serif;font-size:clamp(0.58rem,1.5vw,0.72rem);font-weight:800;color:#FFD700;white-space:nowrap;}
 .bphone::before{content:'📞 ';}
 .bemail::before{content:'✉ ';}
 .bsep{color:rgba(255,255,255,0.4);font-size:0.6rem;}
 
-.slider-wrap{
+/* 
+  Slider uses width:100% and padding-top:56.25% (16:9)
+  This means the slider height = width × 9/16
+  The image will ALWAYS be the correct size — no stretching ever
+*/
+.slider-outer{
   width:100%;
-  /* Use aspect ratio padding trick to ensure full image shows */
   position:relative;
-  /* 16:9 ratio = 56.25% */
-  padding-top:56.25%;
+  padding-top:56.25%; /* 16:9 */
   overflow:hidden;
   background:#fff;
 }
 .track{
   position:absolute;
-  top:0;left:0;
+  top:0;left:0;bottom:0;
   display:flex;
-  height:100%;
   will-change:transform;
 }
 .slide{
@@ -72,14 +59,13 @@ header{
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
 }
 .si{
   display:block;
+  /* image fills its natural 16:9 box exactly */
   width:100%;
   height:100%;
-  object-fit:contain;
-  object-position:center center;
+  object-fit:fill; /* fill the exact 16:9 box — no black bars, no crop */
 }
 </style>
 </head>
@@ -98,7 +84,7 @@ header{
   </div>
 </header>
 
-<div class="slider-wrap" id="sw">
+<div class="slider-outer" id="sw">
   <div class="track" id="track">
       <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_000000002b0c71fdace2022dcf1ffc03.png" alt="clone-last"/></div>
       <div class="slide"><img class="si" src="https://raw.githubusercontent.com/davidsacademy/Davidsacademy-images/main/file_00000000200c722f991655b77cb49ed7.png" alt="Smith's System Overview"/></div>
@@ -115,12 +101,7 @@ header{
 <script>
 const REAL=6,TOTAL=REAL+2,AUTO=4000,SPEED=400;
 const track=document.getElementById('track');
-const sw=document.getElementById('sw');
-// track width based on viewport
-function setWidth(){track.style.width=(TOTAL*100)+'vw';}
-setWidth();
-window.addEventListener('resize',setWidth);
-
+track.style.width=(TOTAL*100)+'vw';
 let cur=1,autoT,sliding=false;
 function setPos(i,a){
   track.style.transition=a?`transform ${SPEED}ms cubic-bezier(0.55,0,0.1,1)`:'none';
@@ -135,7 +116,7 @@ track.addEventListener('transitionend',()=>{
 function next(){goTo(cur+1);}
 function prev(){goTo(cur-1);}
 function startAuto(){clearInterval(autoT);autoT=setInterval(next,AUTO);}
-sw.addEventListener('click',e=>{
+document.getElementById('sw').addEventListener('click',e=>{
   if(e.clientX>window.innerWidth/2)next();else prev();
   clearInterval(autoT);startAuto();
 });
