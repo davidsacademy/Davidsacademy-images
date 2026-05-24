@@ -6,33 +6,28 @@
 <title>Slider</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;margin:0;padding:0;background:#000;overflow:hidden;}
+html,body{width:100%;margin:0;padding:0;background:transparent;overflow:hidden;}
 
-/* Pure 16:9 slider — no header, no padding, nothing else */
+/* Slider — width 100%, height auto from image natural ratio */
 .wrap{
   width:100%;
-  position:relative;
-  padding-top:56.25%;
   overflow:hidden;
-  background:#000;
+  line-height:0; /* removes any inline spacing */
 }
 .track{
-  position:absolute;
-  top:0;left:0;bottom:0;
   display:flex;
+  width:800vw;
   will-change:transform;
 }
 .slide{
   flex-shrink:0;
   width:100vw;
-  height:100%;
-  background:#000;
 }
+/* Image drives the height — natural 16:9, no black, no padding */
 .si{
   display:block;
   width:100%;
-  height:100%;
-  object-fit:fill;
+  height:auto;
 }
 </style>
 </head>
@@ -53,7 +48,6 @@ html,body{width:100%;margin:0;padding:0;background:#000;overflow:hidden;}
 <script>
 const REAL=6,TOTAL=REAL+2,AUTO=4000,SPEED=400;
 const track=document.getElementById('track');
-track.style.width=(TOTAL*100)+'vw';
 let cur=1,autoT,sliding=false;
 function setPos(i,a){
   track.style.transition=a?`transform ${SPEED}ms cubic-bezier(0.55,0,0.1,1)`:'none';
