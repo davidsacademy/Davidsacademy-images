@@ -326,7 +326,7 @@ function App(){
           <span style={{background:"#f59e0b",color:"#fff",borderRadius:100,padding:"6px 12px",fontSize:14,fontWeight:900,letterSpacing:0.5,whiteSpace:"nowrap",flexShrink:0}}>40 Qs</span>
         </button>
 
-        <p style={{fontSize:9,letterSpacing:2,color:"#d97706",textTransform:"uppercase",fontWeight:800,marginBottom:3}}><svg width="13" height="13" viewBox="0 0 13 13" style={{marginRight:4,flexShrink:0}}><rect width="13" height="13" rx="2" fill="#222"/><circle cx="6.5" cy="2.5" r="1.8" fill="#FF3333"/><circle cx="6.5" cy="6.5" r="1.8" fill="#FFB800"/><circle cx="6.5" cy="10.5" r="1.8" fill="#33CC33"/></svg> Traffic Signs ({ALL_SIGNS.length} questions)</p>
+        <div style={{fontSize:9,letterSpacing:2,color:"#d97706",textTransform:"uppercase",fontWeight:800,marginBottom:3,display:"flex",alignItems:"center"}}><svg width="13" height="13" viewBox="0 0 13 13" style={{marginRight:4,flexShrink:0}}><rect width="13" height="13" rx="2" fill="#222"/><circle cx="6.5" cy="2.5" r="1.8" fill="#FF3333"/><circle cx="6.5" cy="6.5" r="1.8" fill="#FFB800"/><circle cx="6.5" cy="10.5" r="1.8" fill="#33CC33"/></svg> Traffic Signs ({ALL_SIGNS.length} questions)</div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:6,marginBottom:8}}>
           {SETS.filter(s=>s.cat==="Signs").map(set=>(
             <button key={set.key} onClick={()=>startSet(set)} style={{background:"#f59e0b",border:"2px solid #d97706",borderRadius:10,padding:"8px 8px",cursor:"pointer",textAlign:"left",transition:"all 0.18s",boxShadow:"0 2px 8px rgba(0,0,0,0.05)"}}
@@ -338,7 +338,7 @@ function App(){
           ))}
         </div>
 
-        <p style={{fontSize:9,letterSpacing:2,color:"#059669",textTransform:"uppercase",fontWeight:800,marginBottom:3}}>📋 Driving Rules ({ALL_RULES.length} questions)</p>
+        <div style={{fontSize:9,letterSpacing:2,color:"#059669",textTransform:"uppercase",fontWeight:800,marginBottom:3}}>📋 Driving Rules ({ALL_RULES.length} questions)</div>
         <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:6,marginBottom:8}}>
           {SETS.filter(s=>s.cat==="Rules").map(set=>(
             <button key={set.key} onClick={()=>startSet(set)} style={{background:"#059669",border:"2px solid #047857",borderRadius:10,padding:"8px 8px",cursor:"pointer",textAlign:"left",transition:"all 0.18s",boxShadow:"0 2px 8px rgba(0,0,0,0.05)"}}
